@@ -1,0 +1,6 @@
+VERSION='3ddp_host'
+FLUENT_ARCH='win64'
+FLUENT_RELEASE='fluent23.1.0'
+CSOURCES=' $(SRC)ABL_adaptive_roughness_case_A.c'
+HSOURCES=''
+GPU_SUPPORT='off'
