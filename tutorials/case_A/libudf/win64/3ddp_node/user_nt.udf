@@ -1,5 +1,0 @@
-CSOURCES= $(SRC)ABL_adaptive_roughness_case_A.c
-HSOURCES=
-VERSION=3ddp_node
-PARALLEL_NODE=intel
-GPU_SUPPORT=off
