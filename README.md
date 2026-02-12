@@ -4,6 +4,7 @@ The methodology presented in the above paper was implemented in Ansys Fluent, re
 The "tutorials" directory contains two tutorial cases:
 - case_A: model-scale channel flow with a power-law velocity distribution, a logarithmic-polynomial TKE distribution and vertical blending using a modified vertical coordinate (case A in the referenced publication)
 - case_E: full-scale channel flow with a logarithmic velocity distribution and a homogeneous TKE distribution (case E in the referenced publication)
+
 Each tutorial case contains the following files and directories:
 - tutorial_case_initialized.cas.h5: initialised case file
 - tutorial_case_initialized.dat.h5: initialised data file
