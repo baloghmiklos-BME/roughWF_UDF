@@ -1,16 +1,14 @@
 # roughWF_UDF
 This repository contains the implementation of the adaptive roughness parameter calculation presented in INSERT CITATION, along with two tutorial cases.
 The methodology presented in the above paper was implemented in Ansys Fluent, release 2023 R1, using User-Defined Functions (UDF).
-The contents of this repository:
-- README.md
-- LICENSE
-- tutorials:
-  - case_A: model-scale channel flow with a power-law velocity distribution, a logarithmic-polynomial TKE distribution and vertical blending using a modified vertical coordinate (case A in the referenced publication)
-    - tutorial_case_initialized.cas.h5: initialised case file
-    - tutorial_case_initialized.dat.h5: initialised data file
-    - setup_case.jou: journal file containing text commands for setting up the simulation
-    - run_case.jou: journal file containing text commands for running the simulation
-  - case_E: full-scale channel flow with a logarithmic velocity distribution and a homogeneous TKE distribution (case E in the referenced publication)
+The "tutorials" directory contains two tutorial cases:
+- case_A: model-scale channel flow with a power-law velocity distribution, a logarithmic-polynomial TKE distribution and vertical blending using a modified vertical coordinate (case A in the referenced publication)
+- case_E: full-scale channel flow with a logarithmic velocity distribution and a homogeneous TKE distribution (case E in the referenced publication)
+Each tutorial case contains the following files and directories:
+- tutorial_case_initialized.cas.h5: initialised case file
+- tutorial_case_initialized.dat.h5: initialised data file
+- setup_case.jou: journal file containing text commands for setting up the simulation
+- run_case.jou: journal file containing text commands for running the simulation
 
 How to run the tutorial cases:
 1. Download the complete "tutorials/case_A" or "tutorials/cases_E" directory
