@@ -6,6 +6,11 @@ The "tutorials" directory contains two tutorial cases:
 - case_E: full-scale channel flow with a logarithmic velocity distribution and a homogeneous TKE distribution (case E in the referenced publication)
 
 Each tutorial case contains the following files and directories:
+- README.txt: text file with general information and instructions for the specific tutorial case
+- ABL_adaptive_roughness_case_A.c or ABL_adaptive_roughness_case_E.c: UDF file, which specifies:
+  -  the inflow conditions for the k-omega and k-epsilon model families
+  -  on-demand executables to patch the inflow distribution for the whole domain during initialisation
+  -  the adaptive calculation of the Ks and Cs roughness parameters using all four methods presented in the publication
 - tutorial_case_initialized.cas.h5: initialised case file
 - tutorial_case_initialized.dat.h5: initialised data file
 - setup_case.jou: journal file containing text commands for setting up the simulation
