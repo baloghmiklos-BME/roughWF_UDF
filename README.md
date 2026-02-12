@@ -6,7 +6,10 @@ The contents of this repository:
 - LICENSE
 - tutorials:
   - case_A: model-scale channel flow with a power-law velocity distribution, a logarithmic-polynomial TKE distribution and vertical blending using a modified vertical coordinate (case A in the referenced publication)
-    - 
+    - tutorial_case_initialized.cas.h5: initialised case file
+    - tutorial_case_initialized.dat.h5: initialised data file
+    - setup_case.jou: journal file containing text commands for setting up the simulation
+    - run_case.jou: journal file containing text commands for running the simulation
   - case_E: full-scale channel flow with a logarithmic velocity distribution and a homogeneous TKE distribution (case E in the referenced publication)
 
 How to run the tutorial cases:
