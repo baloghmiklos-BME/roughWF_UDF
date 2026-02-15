@@ -24,5 +24,7 @@ How to run the tutorial cases with the default settings for the roughness parame
 
 To run the simulation with a different method or Ks+ value, follow these steps:
 1. Download the complete "tutorials/case_A" or "tutorials/cases_E" directory
-2. Open the "case_A/ABL_adaptive_roughness_case_A.c" or "case_E/ABL_adaptive_roughness_case_E.c" file in a suitable text editor and change the value of the "ks_plus_array" variable in line 66 for case A or line 43 for case E
-3. Open the case_setup.jou journal file in a suitable text editor and change the last argument in line 34 from "wall_cs_M4::libudf" to "wall_cs_M1::libudf", "wall_cs_M2::libudf", or "wall_cs_M3::libudf" to use Method 1, 2 or 3 instead of Method 4, respectively
+2. Open the "ABL_adaptive_roughness_case_A.c" or "ABL_adaptive_roughness_case_E.c" file in a suitable text editor and change the value of the "ks_plus_array" variable in line 66 for case A or line 43 for case E
+3. Open the "case_setup.jou" journal file in a suitable text editor and change the last argument in line 34 from "wall_cs_M4::libudf" to "wall_cs_M1::libudf", "wall_cs_M2::libudf", or "wall_cs_M3::libudf" to use Method 1, 2 or 3 instead of Method 4, respectively
+4. Open Ansys Fluent and read the edited "case_setup.jou" journal file to initialise the case
+5. Read the "run_case.jou" journal file to run the simulation
