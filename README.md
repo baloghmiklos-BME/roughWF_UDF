@@ -26,6 +26,6 @@ How to run the tutorial cases with the default settings for the roughness parame
 To run the simulation with a different method or Ks+ value, follow these steps:
 1. Download the complete "tutorials/case_A" or "tutorials/cases_E" directory
 2. Open the "ABL_adaptive_roughness_case_A.c" or "ABL_adaptive_roughness_case_E.c" file in a suitable text editor and change the value of the "ks_plus_array" variable in line 66 for case A or line 43 for case E, then save the file
-3. To use Methods 1, 2 or 3, open Ansys Fluent and read the "case_setup_M1.jou", "case_setup_M2.jou" or "case_setup_M3.jou" journal files, respectively, into Fluent to initialise the case
+3. To use Methods 1, 2 or 3 instead of the default Method 4, open Ansys Fluent and read the "case_setup_M1.jou", "case_setup_M2.jou" or "case_setup_M3.jou" journal files, respectively, into Fluent to initialise the case
 4. Read the "run_case.jou" journal file to run the initialised case
 5. The vertical distributions of the streamwise velocity and the TKE are exported to the "mean_u_velocity_profiles.txt" and "tke_profiles.txt" text files in the working directory.
