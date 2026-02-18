@@ -1,0 +1,54 @@
+; Read mesh for case
+rc .\2D_channel.msh
+
+
+; Define viscous model
+define models viscous kw-sst? y
+
+
+; Change material properties
+define materials change-create air , y constant 1 n n y constant 1.5e-05 n n n
+
+
+; Compile UDF file, allocate memory for diagnostic variables
+define user-defined user-defined-memory 6
+define user-defined c-f compile "libudf" yes "ABL_adaptive_roughness_case_A.c" "" ""
+define user-defined compiled-functions load "libudf"
+
+
+; Define boundary conditions
+define boundary-conditions zone-type inlet velocity-inlet
+define boundary-conditions velocity-inlet inlet n y y n 0 y y y "udf" "inlet_U::libudf" y y "udf" "inlet_V::libudf" y y "udf" "inlet_W::libudf" y y y "udf" "inlet_k::libudf" y y "udf" "inlet_omega::libudf"
+define boundary-conditions zone-type left symmetry
+define boundary-conditions zone-type right symmetry
+define boundary-conditions zone-type top velocity-inlet
+define boundary-conditions velocity-inlet top n y y n 0 y y y "udf" "inlet_U::libudf" y y "udf" "inlet_V::libudf" y y "udf" "inlet_W::libudf" y y y "udf" "inlet_k::libudf" y y "udf" "inlet_omega::libudf"
+define boundary-conditions zone-type outlet pressure-outlet
+define boundary-conditions zone-type bottom wall
+
+
+; Initialize the case
+solve initialize compute-defaults all-zones quit
+solve initialize initialize-flow y quit
+define user-defined execute-on-demand "Patch_ABL_k_w::libudf"
+define boundary-conditions wall bottom n n n y y "udf" "wall_ks::libudf" y y "udf" "wall_cs_M2::libudf" 
+
+
+; Numerical solver settings
+solve set p-v-coupling 20
+solve set disc pressure 12
+solve set disc mom 1
+solve set disc k 0
+solve set disc omega 0
+
+
+; Set Viscosity ratio limit to 1e20
+solve set limits ,,,,1e20
+
+
+; Turn off convergence criteria
+solve monitors residual convergence-criteria 0 0 0 0 0 0
+
+
+; Write case and data file
+file write-case-data tutorial_case_initialized.cas.h5 ok
