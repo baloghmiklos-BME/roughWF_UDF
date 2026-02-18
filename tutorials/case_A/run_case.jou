@@ -13,6 +13,6 @@ file write-case-data tutorial_case_it_%i.cas.h5 ok
 
 ; Export the velocity and TKE profiles at the outlet
 surface line-surface line_out 4.59999 0 0 4.59999 0 1
-plot plot y "mean_u_velocity_profiles" y y 0 0 1 n n x-velocity outlet ()
-plot plot y "tke_profiles" y y 0 0 1 n n turb-kinetic-energy outlet ()
+plot plot y "mean_u_velocity_profiles.txt" y y 0 0 1 n n x-velocity outlet ()
+plot plot y "tke_profiles.txt" y y 0 0 1 n n turb-kinetic-energy outlet ()
 
