@@ -6,7 +6,7 @@ define user-defined c-f compile "libudf" yes "ABL_adaptive_roughness_case_A.c" "
 define user-defined compiled-functions load "libudf"
 
 ; Run 2000 iterations
-solve it 2000
+solve iterate 2000
 
 ; Write case and data files
 file write-case-data tutorial_case_it_%i.cas.h5 ok
@@ -15,4 +15,5 @@ file write-case-data tutorial_case_it_%i.cas.h5 ok
 surface line-surface line_out 4.59999 0 0 4.59999 0 1
 plot plot y "mean_u_velocity_profiles.txt" y y 0 0 1 n n x-velocity outlet ()
 plot plot y "tke_profiles.txt" y y 0 0 1 n n turb-kinetic-energy outlet ()
+
 
