@@ -21,12 +21,11 @@ Each tutorial case contains the following files and directories:
 How to run the tutorial cases with the default settings for the roughness parameter calculations:
 1. Download the complete "tutorials/case_A" or "tutorials/cases_E" directory
 2. By default, the case and data files are set up for using Method 4 with the parameter selection Ks+ = 1000. To run the simulation with these settings, the user can read the "run_cases.jou" journal file into Fluent, which loads the initialised case and data files, recompiles and loads the libudf directory, runs 2000 iterations in steady-state, saves the case and data files for the final iteration and exports the distribution of the streamwise velocity and the turbulent kinetic energy at the outlet.
-3. The vertical distributions of the streamwise velocity and the TKE are exported to the "mean_u_velocity_profiles" and "tke_profiles" text files in the working directory.
+3. The vertical distributions of the streamwise velocity and the TKE are exported to the "mean_u_velocity_profiles.txt" and "tke_profiles.txt" text files in the working directory.
 
 To run the simulation with a different method or Ks+ value, follow these steps:
 1. Download the complete "tutorials/case_A" or "tutorials/cases_E" directory
-2. Open the "ABL_adaptive_roughness_case_A.c" or "ABL_adaptive_roughness_case_E.c" file in a suitable text editor and change the value of the "ks_plus_array" variable in line 66 for case A or line 43 for case E
-3. Open the "case_setup.jou" journal file in a suitable text editor and change the last argument in line 34 from "wall_cs_M4::libudf" to "wall_cs_M1::libudf", "wall_cs_M2::libudf", or "wall_cs_M3::libudf" to use Method 1, 2 or 3 instead of Method 4, respectively
-4. Open Ansys Fluent and read the edited "case_setup.jou" journal file to initialise the case
-5. Read the "run_case.jou" journal file to run the simulation
-6. The vertical distributions of the streamwise velocity and the TKE are exported to the "mean_u_velocity_profiles" and "tke_profiles" text files in the working directory.
+2. Open the "ABL_adaptive_roughness_case_A.c" or "ABL_adaptive_roughness_case_E.c" file in a suitable text editor and change the value of the "ks_plus_array" variable in line 66 for case A or line 43 for case E, then save the file
+3. To use Methods 1, 2 or 3, open Ansys Fluent and read the "case_setup_M1.jou", "case_setup_M2.jou" or "case_setup_M3.jou" journal files, respectively, into Fluent to initialise the case
+4. Read the "run_case.jou" journal file to run the initialised case
+5. The vertical distributions of the streamwise velocity and the TKE are exported to the "mean_u_velocity_profiles.txt" and "tke_profiles.txt" text files in the working directory.
